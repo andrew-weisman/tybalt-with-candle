@@ -81,7 +81,7 @@ if __name__ == '__main__':
     if not opt.hpo:
         checkpointer = ModelCheckpoint(filepath=checkpoint_combined, 
             verbose=opt.verbose, save_weights_only=True)
-        combined_model.fit(train_df, train_df, shuffle=True,
+        history = combined_model.fit(train_df, train_df, shuffle=True,
             epochs=int(opt.num_epochs), batch_size=int(opt.batch_size),
             validation_data=(test_df, test_df), callbacks=[checkpointer])
         combined_model.save_weights(checkpoint_combined)
