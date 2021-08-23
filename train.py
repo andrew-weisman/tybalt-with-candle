@@ -47,7 +47,7 @@ def save_training_performance(pd, args):
 
 if __name__ == '__main__':
     opt, checkpoint_combined, checkpoint_encoder, checkpoint_decoder = \
-        parse_command_line_arguments("train")
+        parse_command_line_arguments("train", candle_params['tybalt_model_name'])
 
     opt, rnaseq_df, train_df, test_df = get_data(opt)
 
