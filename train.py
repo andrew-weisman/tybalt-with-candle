@@ -4,6 +4,8 @@ import os, re
 import numpy as np
 import pandas as pd
 
+import subprocess
+
 import tensorflow as tf
 
 from tensorflow.keras import optimizers
@@ -46,6 +48,9 @@ def save_training_performance(pd, args):
     return history_df
 
 if __name__ == '__main__':
+
+    subprocess.run(['cp -r $TYBALT_DATA/* .'], shell=True)
+
     opt, checkpoint_combined, checkpoint_encoder, checkpoint_decoder = \
         parse_command_line_arguments("train", candle_params['tybalt_model_name'])
 
