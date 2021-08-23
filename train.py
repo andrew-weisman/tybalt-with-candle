@@ -49,6 +49,13 @@ if __name__ == '__main__':
     opt, checkpoint_combined, checkpoint_encoder, checkpoint_decoder = \
         parse_command_line_arguments("train", candle_params['tybalt_model_name'])
 
+    opt.depth = candle_params['depth']
+    opt.hidden_dim = candle_params['hidden_dim']
+    opt.kappa = candle_params['kappa']
+    opt.batch_size = candle_params['batch_size']
+    opt.num_epochs = candle_params['num_epochs']
+    opt.lr = candle_params['learning_rate']
+
     opt, rnaseq_df, train_df, test_df = get_data(opt)
 
     if not opt.hpo:
