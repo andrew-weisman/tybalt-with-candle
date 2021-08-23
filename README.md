@@ -22,4 +22,4 @@ In summary, here are the steps required to run HPO on Tybalt using CANDLE:
 * In particular, there are no issues or conflicts at all with the Python libraries or versions. E.g., your code does not need to depend on `python/3.7` in any way, nor do you need to know the Python packages on which CANDLE depends.
 * I think you could write a simple wrapper around this in order to present it clearly to your class as you previously tried to do. I would be happy to help with this or with anything else!
 
-**Gennady, please let me know if you have any particular questions or if something is still unclear!**
+**Gennady, please let me know ((240) 276-5891 or [andrew.weisman@nih.gov](andrew.weisman@nih.gov)) if you have any particular questions or if something is still unclear!**
