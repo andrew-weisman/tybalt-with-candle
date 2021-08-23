@@ -1,0 +1,123 @@
+&control
+  model_script="/home/weismanal/notebook/2021-08-23/tybalt_with_candle/train.py"  # Since I modified train.py, I am setting this to my local modification for now; generally, just set this to /usr/local/apps/Tybalt/20210709/src/train.py or to a locally modified copy such as $(pwd)/train.py.
+  workflow="grid"
+  nworkers=12
+  worker_type="p100"
+  walltime="01:00:00"
+  run_workflow=1
+  supp_modules = "Tybalt"
+  python_bin_path = "/usr/local/apps/Tybalt/20210709/bin"
+  supp_pythonpath = "/home/weismanal/notebook/2021-08-23/tybalt_with_candle"  # Since I modified options.py, I am setting this to my local modification for now; generally, just set this to /usr/local/apps/Tybalt/20210709/src. Setting this keyword allows access to e.g. models.py and options.py from train.py.
+/
+
+&default_model
+  tybalt_model_name = 'vae'
+  depth = 1
+  hidden_dim = 300
+  kappa = 0.1
+  batch_size = 50
+  num_epochs = 100
+  learning_rate = 0.0005
+/
+
+# This section was generated using the command:
+#   candle generate-grid "['depth',[1,2]]" "['hidden_dim',[100,300]]" "['kappa',[0.1,1]]" "['batch_size',[50,100,200]]" "['num_epochs',[50,100]]" "['learning_rate',[0.0005,0.001]]"
+# This generates the full hyperparameter space (96 sets of hyperparameters) from the first HPO example at the Tybalt Biowulf help page.
+&param_space
+{"id": "hpset_00001", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00002", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00003", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00004", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00005", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00006", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00007", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00008", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00009", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00010", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00011", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00012", "depth": 1, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00013", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00014", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00015", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00016", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00017", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00018", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00019", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00020", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00021", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00022", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00023", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00024", "depth": 1, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00025", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00026", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00027", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00028", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00029", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00030", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00031", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00032", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00033", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00034", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00035", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00036", "depth": 1, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00037", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00038", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00039", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00040", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00041", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00042", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00043", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00044", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00045", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00046", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00047", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00048", "depth": 1, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00049", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00050", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00051", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00052", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00053", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00054", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00055", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00056", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00057", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00058", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00059", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00060", "depth": 2, "hidden_dim": 100, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00061", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00062", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00063", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00064", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00065", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00066", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00067", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00068", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00069", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00070", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00071", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00072", "depth": 2, "hidden_dim": 100, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00073", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00074", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00075", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00076", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00077", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00078", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00079", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00080", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00081", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00082", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00083", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00084", "depth": 2, "hidden_dim": 300, "kappa": 0.100000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00085", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00086", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00087", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00088", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 50, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00089", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00090", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00091", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00092", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 100, "num_epochs": 100, "learning_rate": 0.001000}
+{"id": "hpset_00093", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.000500}
+{"id": "hpset_00094", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 50, "learning_rate": 0.001000}
+{"id": "hpset_00095", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.000500}
+{"id": "hpset_00096", "depth": 2, "hidden_dim": 300, "kappa": 1.000000, "batch_size": 200, "num_epochs": 100, "learning_rate": 0.001000}
+/
