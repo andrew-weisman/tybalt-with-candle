@@ -6,7 +6,7 @@ The repository starts tracking from the exact files located in `/usr/local/apps/
 
 These steps are inferred directly from the [guide to CANDLE on Biowulf](https://hpc.nih.gov/apps/candle); see [here](https://hpc.nih.gov/apps/candle/#usage_summary) in particular for a summary of the steps.
 
-In summary, here are the steps required to run HPO on Tybalt using CANDLE (this is from the [commit log](https://github.com/andrew-weisman/tybalt-with-candle/commits/main)):
+In summary, here are the steps required to run HPO on Tybalt using CANDLE:
 
 1. [Remove requirement](https://github.com/andrew-weisman/tybalt-with-candle/commit/721b0f18a8636ad496091a3db7abd41b5a4e6ed8) of having the type of model as a command line argument (it will simply be a hyperparameter) since we currently need to be able to run the model script like `python MY_MODEL_SCRIPT.py` with no arguments. Files affected: `options.py` and `train.py`
 1. [Define the hyperparameters](https://github.com/andrew-weisman/tybalt-with-candle/commit/801bfa9a5071b29da9f12d1854590e6fdc646080) in the model script `train.py`. File affected: `train.py`
